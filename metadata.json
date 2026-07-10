@@ -1,0 +1,6 @@
+{
+  "name": "Estrela do Francês",
+  "description": "O equilíbrio perfeito entre o conforto de uma pousada e a vibe conectada de um hostel. Viva a Praia do Francês com o melhor custo-benefício.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Montserrat", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Open Sans", serif;
+
+  --color-viking-blue: #004ca3;
+  --color-viking-gold: #d4a31a;
+  --color-viking-dark: #333333;
+  --color-viking-slate: #f4f4f4;
+  --color-viking-black: #1a1a1a;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-viking-dark font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+.shadow-gold {
+  box-shadow: 0 4px 20px rgba(212, 163, 26, 0.2);
+}
+
+.texture-overlay {
+  background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
+  opacity: 0.05;
+}
+
