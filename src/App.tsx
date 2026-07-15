@@ -4,7 +4,7 @@ import WifiSection from './components/WifiSection';
 import Reviews from './components/Reviews';
 import Amenities from './components/Amenities';
 import UniqueRoom from './components/UniqueRoom';
-import DoubleRoom from './components/DoubleRoom';
+import CoupleRoom from './components/CoupleRoom';
 import InstagramFeed from './components/InstagramFeed';
 import History from './components/History';
 import GuestGuidelines from './components/GuestGuidelines';
@@ -18,11 +18,11 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Amenities />
         <WifiSection />
         <Reviews />
-        <Amenities />
         <UniqueRoom />
-        <DoubleRoom />
+        <CoupleRoom />
         <InstagramFeed />
         <History />
         <GuestGuidelines />

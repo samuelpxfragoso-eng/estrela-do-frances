@@ -4,31 +4,31 @@ import { Star, MessageSquare } from 'lucide-react';
 const reviews = [
   {
     name: "Denir Jose De Oliveira Jose",
-    text: "Boa localização, café da manhã bom, atendimento muito receptivo, piscina maravilhosa 5 estrela com certeza. Ambiente calmo e tranquilo pra quem quer descansar. Eu voltaria a me hospedar lá com certeza. custo benefício excelente.",
+    text: "Boa localização, atendimento muito receptivo, 5 estrela com certeza. Ambiente calmo e tranquilo pra quem quer descansar. Eu voltaria a me hospedar lá com certeza. custo benefício excelente.",
     rating: 5,
     date: "6 meses atrás"
   },
   {
     name: "Wallace Oliveira",
-    text: "Excelente ambiente, quartos limpos e café da manhã excepcional. Quartos serviço e localização nota 5.",
+    text: "Excelente ambiente, quartos limpos. Quartos serviço e localização nota 5.",
     rating: 5,
     date: "5 meses atrás"
   },
   {
     name: "Fernando Munhoz",
-    text: "Que surpresa boa, ótimo em tudo, café da manhã muito bom, as melhores tapiocas que já comemos hahaha, mto recheio e fresquinho! Ovos mexidos feito na hora, sucos naturais deliciosos!",
+    text: "Que surpresa boa, ótimo em tudo, as melhores tapiocas que já comemos hahaha, mto recheio e fresquinho! Ovos mexidos feito na hora, sucos naturais deliciosos!",
     rating: 5,
     date: "um ano atrás"
   },
   {
     name: "kauannys2023",
-    text: "Local muito bom, organizado e higienizado, bem tranquilo e aconchegante. Recepção excelente e café da manhã maravilhoso, área de laser bem organizada. Irei novamente em outra oportunidade. Super recomendo.",
+    text: "Local muito bom, organizado e higienizado, bem tranquilo e aconchegante. Recepção excelente. Irei novamente em outra oportunidade. Super recomendo.",
     rating: 5,
     date: "3 anos atrás"
   },
   {
     name: "carlosjosef642",
-    text: "Ótima pousada. Quarto e camas confortáveis. Ar condicionado split silencioso. Café da manhã muito bom. Área verde excelente para as crianças. O proprietário Erick está sempre presente e ainda prepara tapioca no café da manhã. Super satisfeito. Recomendo.",
+    text: "Ótima pousada. Quarto e camas confortáveis. Ar condicionado split silencioso. O proprietário Erick está sempre presente. Super satisfeito. Recomendo.",
     rating: 5,
     date: "3 anos atrás"
   },

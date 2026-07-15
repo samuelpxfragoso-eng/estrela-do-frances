@@ -9,7 +9,7 @@ const images = [
   "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783644733/WhatsApp_Image_2026-07-09_at_6.18.52_PM_f8ej5f.jpg"
 ];
 
-export default function DoubleRoom() {
+export default function CoupleRoom() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -24,10 +24,10 @@ export default function DoubleRoom() {
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl md:text-5xl text-viking-blue uppercase">
-            Quarto <span className="text-viking-gold">Duplo</span>
+            Quarto de <span className="text-viking-gold">Casal</span>
           </h2>
           <div className="h-[2px] w-24 bg-viking-gold mx-auto mt-4" />
-          <p className="mt-6 text-2xl font-bold text-viking-dark">R$ 150,00</p>
+          <p className="mt-6 text-2xl font-bold text-viking-dark">R$ 140,00</p>
         </div>
 
         <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl mb-12">
@@ -35,7 +35,7 @@ export default function DoubleRoom() {
             <motion.img
               key={currentIndex}
               src={images[currentIndex]}
-              alt={`Quarto Duplo ${currentIndex + 1}`}
+              alt={`Quarto de Casal ${currentIndex + 1}`}
               className="absolute inset-0 w-full h-full object-cover"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -48,7 +48,7 @@ export default function DoubleRoom() {
 
         <div className="text-center">
           <a
-            href="https://wa.me/5582988128379?text=Olá!%20Gostaria%20de%20reservar%20o%20Quarto%20Duplo%20por%20R$%20150,00."
+            href="https://wa.me/5582988128379?text=Olá!%20Gostaria%20de%20reservar%20o%20Quarto%20de%20Casal%20por%20R$%20140,00."
             target="_blank"
             rel="noreferrer"
             className="inline-block bg-viking-blue text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-viking-gold transition-colors"

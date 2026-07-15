@@ -59,6 +59,15 @@ export default function Hero() {
               Na <strong>Estrela do Francês</strong>, criamos um refúgio para quem quer vivenciar Alagoas por inteiro. Seja para relaxar no seu próprio espaço ou para conectar-se com viajantes do mundo todo, nossa estrutura foi desenhada para ser o seu ponto de partida.
             </p>
           </div>
+
+          <motion.a
+            href="https://wa.me/5582988128379?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Pousada%20Estrela%20do%20Francês."
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block bg-[#0056b3] text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-viking-blue transition-colors"
+          >
+            Reservar Agora
+          </motion.a>
         
         </motion.div>
       </div>
