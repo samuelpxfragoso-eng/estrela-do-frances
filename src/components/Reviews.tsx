@@ -15,26 +15,8 @@ const reviews = [
     date: "5 meses atrás"
   },
   {
-    name: "Fernando Munhoz",
-    text: "Que surpresa boa, ótimo em tudo, as melhores tapiocas que já comemos hahaha, mto recheio e fresquinho! Ovos mexidos feito na hora, sucos naturais deliciosos!",
-    rating: 5,
-    date: "um ano atrás"
-  },
-  {
     name: "kauannys2023",
     text: "Local muito bom, organizado e higienizado, bem tranquilo e aconchegante. Recepção excelente. Irei novamente em outra oportunidade. Super recomendo.",
-    rating: 5,
-    date: "3 anos atrás"
-  },
-  {
-    name: "carlosjosef642",
-    text: "Ótima pousada. Quarto e camas confortáveis. Ar condicionado split silencioso. O proprietário Erick está sempre presente. Super satisfeito. Recomendo.",
-    rating: 5,
-    date: "3 anos atrás"
-  },
-  {
-    name: "Paulinha Oliveira",
-    text: "Que lugar aconchegante. Tudo aqui é muito lindo e organizado. Logo na entrada tem um paisagismo belíssimo, muitas plantas, e muita decoração com madeira. Adorei me hospedar aqui.",
     rating: 5,
     date: "3 anos atrás"
   },

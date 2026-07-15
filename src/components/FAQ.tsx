@@ -15,10 +15,6 @@ const faqs = [
   {
     question: "O que tem para fazer perto da hospedagem?",
     answer: "Além da praia (famosa pelo surf e pelas piscinas naturais), você estará a poucos minutos de polos gastronômicos, lojas de surf, bares com música ao vivo e passeios turísticos locais."
-  },
-  {
-    question: "Como funciona o Café da Manhã?",
-    answer: "Servimos um delicioso café da manhã com o melhor da culinária regional, perfeito para energizar seu dia de praia."
   }
 ];
 
