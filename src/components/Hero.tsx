@@ -61,7 +61,7 @@ export default function Hero() {
           </div>
 
           <motion.a
-            href="https://wa.me/5582988128379?text=Olá!%20Gostaria%20de%20fazer%20uma%20reserva%20na%20Pousada%20Estrela%20do%20Francês."
+            href="https://wa.me/5544999274647?text=Olá!%20Como%20faço%20para%20me%20hospedar%20na%20pousada%3F"
             target="_blank"
             rel="noreferrer"
             className="inline-block bg-[#0056b3] text-white px-10 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-viking-blue transition-colors"
