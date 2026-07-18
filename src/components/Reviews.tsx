@@ -103,7 +103,7 @@ export default function Reviews() {
 
         <div className="mt-12 text-center">
             <motion.a
-                href="https://g.page/r/Cf-DMehcF73UEAE/review"
+                href="https://g.page/r/CXRfX4p6vMzCEAE/review"
                 target="_blank"
                 rel="noreferrer"
                 animate={{ scale: [1, 1.05, 1] }}
