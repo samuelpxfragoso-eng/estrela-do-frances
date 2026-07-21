@@ -1,24 +1,19 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const images = [
-  "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783644734/WhatsApp_Image_2026-07-09_at_6.18.51_PM_j6jqgo.jpg",
-  "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783644734/WhatsApp_Image_2026-07-09_at_6.18.51_PM_2_ek3dmy.jpg",
-  "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783644733/WhatsApp_Image_2026-07-09_at_6.18.52_PM_1_pjyjg2.jpg",
-  "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783644733/WhatsApp_Image_2026-07-09_at_6.18.52_PM_2_b554sy.jpg",
-  "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783644733/WhatsApp_Image_2026-07-09_at_6.18.52_PM_f8ej5f.jpg"
+const media = [
+  { type: 'video', src: 'https://res.cloudinary.com/dky9oxhzt/video/upload/v1784663490/WhatsApp_Video_2026-07-19_at_6.02.04_PM_ahdpre.mp4' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663480/WhatsApp_Image_2026-07-19_at_6.00.57_PM_j3eh9p.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663479/WhatsApp_Image_2026-07-19_at_6.02.10_PM_u2rdaf.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663478/WhatsApp_Image_2026-07-19_at_6.02.12_PM_br2npm.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663478/WhatsApp_Image_2026-07-19_at_6.02.12_PM_1_q7ytbc.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663478/WhatsApp_Image_2026-07-19_at_6.02.11_PM_mgwmy3.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663478/WhatsApp_Image_2026-07-19_at_6.02.14_PM_1_elkw3d.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663478/WhatsApp_Image_2026-07-19_at_6.02.14_PM_zasji6.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663478/WhatsApp_Image_2026-07-19_at_6.02.11_PM_1_zycgwu.jpg' },
 ];
 
 export default function UniqueRoom() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4">
@@ -28,23 +23,41 @@ export default function UniqueRoom() {
           </h2>
           <div className="h-[2px] w-24 bg-viking-gold mx-auto mt-4" />
           <p className="mt-6 text-2xl font-bold text-viking-dark">R$ 80,00</p>
+          <p className="mt-4 text-lg text-gray-600">Prático e confortável, perfeito para viajantes individuais que buscam um descanso tranquilo.</p>
         </div>
 
         <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl mb-12">
-          <AnimatePresence mode='wait'>
-            <motion.img
-              key={currentIndex}
-              src={images[currentIndex]}
-              alt={`Quarto Único ${currentIndex + 1}`}
-              className="absolute inset-0 w-full h-full object-cover"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
-              referrerPolicy="no-referrer"
-            />
-          </AnimatePresence>
+          <motion.div 
+            className="flex h-full w-full cursor-grab"
+            drag="x"
+            dragConstraints={{ right: 0, left: -((media.length - 1) * 600) }}
+            animate={{ x: [0, -((media.length - 1) * 400)] }}
+            transition={{ repeat: Infinity, repeatType: "reverse", duration: media.length * 3, ease: "linear" }}
+          >
+            {media.map((item, index) => (
+              <div key={index} className="flex-shrink-0 w-full h-full relative">
+                {item.type === 'image' ? (
+                  <img
+                    src={item.src}
+                    alt={`Quarto Único ${index + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <video
+                    src={item.src}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                )}
+              </div>
+            ))}
+          </motion.div>
         </div>
+        <p className="text-center text-sm text-gray-500 mb-8">* Café da manhã regional disponível por mais R$ 20,00.</p>
 
         <div className="text-center">
           <a

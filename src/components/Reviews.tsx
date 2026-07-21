@@ -3,28 +3,76 @@ import { Star, MessageSquare } from 'lucide-react';
 
 const reviews = [
   {
-    name: "Denir Jose De Oliveira Jose",
-    text: "Boa localização, atendimento muito receptivo, 5 estrela com certeza. Ambiente calmo e tranquilo pra quem quer descansar. Eu voltaria a me hospedar lá com certeza. custo benefício excelente.",
+    name: "Regivana Dias",
+    text: "Passei alguns dias em Maceió e me hospedei na pousada, lugar limpo e bem organizado, com excelente atendimento. Recomendo custo e benefício justo.",
     rating: 5,
-    date: "6 meses atrás"
+    date: "Há 2 dias"
   },
   {
-    name: "Wallace Oliveira",
-    text: "Excelente ambiente, quartos limpos. Quartos serviço e localização nota 5.",
+    name: "Wellita Farias",
+    text: "Tive uma experiência maravilhosa! O quarto era extremamente limpo, confortável e bem tranquilo, A equipe foi super...",
     rating: 5,
-    date: "5 meses atrás"
+    date: "Há 2 dias"
   },
   {
-    name: "kauannys2023",
-    text: "Local muito bom, organizado e higienizado, bem tranquilo e aconchegante. Recepção excelente. Irei novamente em outra oportunidade. Super recomendo.",
+    name: "Paulo Moreira",
+    text: "Lugar simples e acolhedor, uma delícia, parabéns",
     rating: 5,
-    date: "3 anos atrás"
+    date: "Há 2 dias"
   },
   {
-    name: "fabiocR6326AP",
-    text: "Ficamos hospedados na primeira semana de dezembro. A localização da pousada é muito boa, não é dentro do agito da praia, o que traz um pouco de tranquilidade e sossego.",
+    name: "AIRTON JÚNIOR",
+    text: "Atendimento muito especial,lugar simples porém aconchegante, tudo muito limpo e organizado. Recomendo principalmente pelo baixo custo , parabéns",
     rating: 5,
-    date: "4 anos atrás"
+    date: "Há 2 dias"
+  },
+  {
+    name: "Jose Junior",
+    text: "Local aconchegante e receptividade nota mil. Tranquilidade a beira-mar.",
+    rating: 5,
+    date: "Há 2 dias"
+  },
+  {
+    name: "Sidney Sebastian",
+    text: "Pesquisei bastante antes de escolher e encontrei um lugar com ótimo custo-benefício. O ambiente é muito organizado, o...",
+    rating: 5,
+    date: "Há 2 dias"
+  },
+  {
+    name: "Juliana Padilha",
+    text: "Lugar ótimo, muito acessível, limpo e charmoso! Voltaremos com certeza!",
+    rating: 5,
+    date: "Há 3 dias"
+  },
+  {
+    name: "Marlos Gapski",
+    text: "A Estrela do Francês – Hostel & Pousada é uma excelente opção para quem busca simplicidade, conforto e ótimo...",
+    rating: 5,
+    date: "Há 3 dias"
+  },
+  {
+    name: "Eu Ricardo",
+    text: "O ambiente é muito limpo, organizado e acolhedor. A pousada é simples, mas extremamente aconchegante, proporcionando uma...",
+    rating: 5,
+    date: "Há 3 dias"
+  },
+  {
+    name: "Esparta",
+    text: "Minha experiência foi bastante confortável, fui bem recebido e bem atendido, os funcionários trabalham bem, são atenciosos, a localização é bem simples e próxima a praia, e gostei da experiência.",
+    rating: 5,
+    date: "Há 3 dias"
+  },
+  {
+    name: "Elder Luciano",
+    text: "Ambiente com aquela simplicidade, porém muito bem acolhedor! Anfitriões educados e ambiente limpo e organizado! Show de bola!",
+    rating: 5,
+    date: "Há 3 dias"
+  },
+  {
+    name: "Vanessa K. Lima",
+    text: "Amei a receptividade. Local bastante aconchegante, excelente para quem procura um ambiente de tranquilo e próximo a praia. Voltarei com certeza.",
+    rating: 5,
+    date: "Há 3 dias"
   }
 ];
 

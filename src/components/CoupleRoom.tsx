@@ -1,24 +1,18 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const images = [
-  "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783645339/WhatsApp_Image_2026-07-09_at_6.18.51_PM_3_jujmlh.jpg",
-  "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783644734/WhatsApp_Image_2026-07-09_at_6.18.51_PM_2_ek3dmy.jpg",
-  "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783645339/WhatsApp_Image_2026-07-09_at_6.18.52_PM_3_tkgf0e.jpg",
-  "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783644733/WhatsApp_Image_2026-07-09_at_6.18.52_PM_2_b554sy.jpg",
-  "https://res.cloudinary.com/dky9oxhzt/image/upload/v1783644733/WhatsApp_Image_2026-07-09_at_6.18.52_PM_f8ej5f.jpg"
+const media = [
+  { type: 'video', src: 'https://res.cloudinary.com/dky9oxhzt/video/upload/v1784663490/WhatsApp_Video_2026-07-19_at_6.01.06_PM_sxcnkd.mp4' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663480/WhatsApp_Image_2026-07-19_at_6.01.14_PM_gau0eh.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663479/WhatsApp_Image_2026-07-19_at_6.01.16_PM_i2fv0z.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663479/WhatsApp_Image_2026-07-19_at_6.01.19_PM_2_umbtoa.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663479/WhatsApp_Image_2026-07-19_at_6.01.19_PM_vaksrz.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663479/WhatsApp_Image_2026-07-19_at_6.01.19_PM_1_kpnhi1.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663478/WhatsApp_Image_2026-07-19_at_6.02.11_PM_mgwmy3.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663478/WhatsApp_Image_2026-07-19_at_6.02.11_PM_1_zycgwu.jpg' },
 ];
 
 export default function CoupleRoom() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section className="py-24 bg-white">
       <div className="max-w-4xl mx-auto px-4">
@@ -28,23 +22,41 @@ export default function CoupleRoom() {
           </h2>
           <div className="h-[2px] w-24 bg-viking-gold mx-auto mt-4" />
           <p className="mt-6 text-2xl font-bold text-viking-dark">R$ 140,00</p>
+          <p className="mt-4 text-lg text-gray-600">Aconchegante, ideal para casais, com cama confortável e ambiente tranquilo para relaxar.</p>
         </div>
 
         <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl mb-12">
-          <AnimatePresence mode='wait'>
-            <motion.img
-              key={currentIndex}
-              src={images[currentIndex]}
-              alt={`Quarto de Casal ${currentIndex + 1}`}
-              className="absolute inset-0 w-full h-full object-cover"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.8 }}
-              referrerPolicy="no-referrer"
-            />
-          </AnimatePresence>
+          <motion.div 
+            className="flex h-full w-full cursor-grab"
+            drag="x"
+            dragConstraints={{ right: 0, left: -((media.length - 1) * 600) }} // Adjust based on width
+            animate={{ x: [0, -((media.length - 1) * 400)] }}
+            transition={{ repeat: Infinity, repeatType: "reverse", duration: media.length * 3, ease: "linear" }}
+          >
+            {media.map((item, index) => (
+              <div key={index} className="flex-shrink-0 w-full h-full relative">
+                {item.type === 'image' ? (
+                  <img
+                    src={item.src}
+                    alt={`Quarto de Casal ${index + 1}`}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  <video
+                    src={item.src}
+                    className="absolute inset-0 w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                  />
+                )}
+              </div>
+            ))}
+          </motion.div>
         </div>
+        <p className="text-center text-sm text-gray-500 mb-8">* Café da manhã regional disponível por mais R$ 20,00.</p>
 
         <div className="text-center">
           <a

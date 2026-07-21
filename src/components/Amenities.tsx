@@ -1,5 +1,20 @@
 import { motion } from 'motion/react';
 
+const media = [
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784667977/WhatsApp_Image_2026-07-21_at_5.59.51_PM_gjpsry.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784667977/WhatsApp_Image_2026-07-21_at_5.59.51_PM_1_gfqej0.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784667966/WhatsApp_Image_2026-07-21_at_5.59.52_PM_cnqupc.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784667965/WhatsApp_Image_2026-07-21_at_5.59.52_PM_1_vajo0w.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784667965/WhatsApp_Image_2026-07-21_at_5.59.53_PM_gjylhw.jpg' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784667965/WhatsApp_Image_2026-07-21_at_5.59.52_PM_2_rcvsxr.jpg' },
+  { type: 'video', src: 'https://res.cloudinary.com/dky9oxhzt/video/upload/v1784663482/WhatsApp_Video_2026-07-19_at_6.00.59_PM_jaubqz.mp4' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663479/WhatsApp_Image_2026-07-19_at_6.01.16_PM_i2fv0z.jpg' },
+  { type: 'video', src: 'https://res.cloudinary.com/dky9oxhzt/video/upload/v1784663490/WhatsApp_Video_2026-07-19_at_6.01.06_PM_sxcnkd.mp4' },
+  { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784663480/WhatsApp_Image_2026-07-19_at_6.00.57_PM_j3eh9p.jpg' },
+  { type: 'video', src: 'https://res.cloudinary.com/dky9oxhzt/video/upload/v1784663490/WhatsApp_Video_2026-07-19_at_6.02.04_PM_ahdpre.mp4' },
+  { type: 'video', src: 'https://res.cloudinary.com/dky9oxhzt/video/upload/v1784663482/WhatsApp_Video_2026-07-19_at_6.00.59_PM_jaubqz.mp4' },
+];
+
 export default function Amenities() {
   return (
     <section className="bg-white py-32 overflow-hidden border-t border-gray-100">
@@ -35,16 +50,35 @@ export default function Amenities() {
             </div>
           </motion.div>
           
-          <div className="relative rounded-lg overflow-hidden shadow-2xl">
-            <video
-              src="https://res.cloudinary.com/dky9oxhzt/video/upload/v1783634190/WhatsApp_Video_2026-07-09_at_6.53.06_PM_qa3nvf.mp4"
-              className="w-full h-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-            />
-          </div>
+          <motion.div 
+            className="cursor-grab overflow-hidden"
+            whileTap={{ cursor: "grabbing" }}
+          >
+            <motion.div 
+              drag="x"
+              dragConstraints={{ right: 0, left: -2000 }}
+              className="flex gap-4"
+            >
+              {media.map((item, index) => (
+                <div key={index} className="flex-shrink-0 w-80 h-96 rounded-lg overflow-hidden shadow-2xl">
+                  {item.type === 'image' ? (
+                    <img
+                      src={item.src}
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                      alt={`Estrutura ${index + 1}`}
+                    />
+                  ) : (
+                    <video
+                      src={item.src}
+                      className="w-full h-full object-cover"
+                      controls
+                    />
+                  )}
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
         </div>
 
       </div>
