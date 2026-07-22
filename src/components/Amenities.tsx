@@ -1,4 +1,6 @@
 import { motion } from 'motion/react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const media = [
   { type: 'image', src: 'https://res.cloudinary.com/dky9oxhzt/image/upload/v1784667977/WhatsApp_Image_2026-07-21_at_5.59.51_PM_gjpsry.jpg' },
@@ -16,6 +18,10 @@ const media = [
 ];
 
 export default function Amenities() {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 3000, stopOnInteraction: true }),
+  ]);
+
   return (
     <section className="bg-white py-32 overflow-hidden border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -50,15 +56,8 @@ export default function Amenities() {
             </div>
           </motion.div>
           
-          <motion.div 
-            className="cursor-grab overflow-hidden"
-            whileTap={{ cursor: "grabbing" }}
-          >
-            <motion.div 
-              drag="x"
-              dragConstraints={{ right: 0, left: -2000 }}
-              className="flex gap-4"
-            >
+          <div className="overflow-hidden cursor-grab" ref={emblaRef}>
+            <div className="flex gap-4">
               {media.map((item, index) => (
                 <div key={index} className="flex-shrink-0 w-80 h-96 rounded-lg overflow-hidden shadow-2xl">
                   {item.type === 'image' ? (
@@ -72,13 +71,16 @@ export default function Amenities() {
                     <video
                       src={item.src}
                       className="w-full h-full object-cover"
-                      controls
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
                     />
                   )}
                 </div>
               ))}
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </div>
 
       </div>

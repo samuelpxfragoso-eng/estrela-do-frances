@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const media = [
   { type: 'video', src: 'https://res.cloudinary.com/dky9oxhzt/video/upload/v1784663490/WhatsApp_Video_2026-07-19_at_6.02.04_PM_ahdpre.mp4' },
@@ -14,6 +15,10 @@ const media = [
 ];
 
 export default function UniqueRoom() {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [
+    Autoplay({ delay: 3000, stopOnInteraction: true }),
+  ]);
+
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-4xl mx-auto px-4">
@@ -26,14 +31,8 @@ export default function UniqueRoom() {
           <p className="mt-4 text-lg text-gray-600">Prático e confortável, perfeito para viajantes individuais que buscam um descanso tranquilo.</p>
         </div>
 
-        <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl mb-12">
-          <motion.div 
-            className="flex h-full w-full cursor-grab"
-            drag="x"
-            dragConstraints={{ right: 0, left: -((media.length - 1) * 600) }}
-            animate={{ x: [0, -((media.length - 1) * 400)] }}
-            transition={{ repeat: Infinity, repeatType: "reverse", duration: media.length * 3, ease: "linear" }}
-          >
+        <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl mb-12 cursor-grab" ref={emblaRef}>
+          <div className="flex h-full">
             {media.map((item, index) => (
               <div key={index} className="flex-shrink-0 w-full h-full relative">
                 {item.type === 'image' ? (
@@ -55,7 +54,7 @@ export default function UniqueRoom() {
                 )}
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
         <p className="text-center text-sm text-gray-500 mb-8">* Café da manhã regional disponível por mais R$ 20,00.</p>
 
